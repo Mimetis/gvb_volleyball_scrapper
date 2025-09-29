@@ -1,0 +1,7 @@
+# Configuration file for multiple volleyball teams
+# Format: Team_Name,URL
+# The team name will be used as the filename for the Excel output
+
+PreNat,https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2025%2F2026&codent=LILR&poule=FPO&calend=COMPLET&equipe=3&x=6&y=3
+R2F,https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2025/2026&codent=LILR&poule=F2O
+R1M,https://www.ffvbbeach.org/ffvbapp/resu/vbspo_calendrier.php?saison=2025/2026&codent=LILR&poule=F2O

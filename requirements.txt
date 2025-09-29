@@ -1,0 +1,23 @@
+# Requirements for FFVB Volleyball Results Scraper
+# Core dependencies for web scraping and data processing
+
+# Web scraping with Selenium
+selenium==4.35.0
+
+# Data processing and manipulation
+pandas==2.3.2
+numpy==2.2.6
+
+# HTML parsing (required by pandas.read_html)
+lxml==6.0.2
+
+# Excel file support
+openpyxl==3.1.5
+
+# Date/time handling (pandas dependency)
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.2
+
+# Additional utility packages (pandas dependencies)
+six==1.17.0
