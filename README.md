@@ -11,7 +11,7 @@ This Python script scrapes volleyball standings/results from the FFVB Beach webs
   - Games played, wins, losses
   - Set-by-set results (3-0, 3-1, 3-2, 2-3, 1-3, 0-3)
   - Points for/against and ratios
-- Saves data to CSV with proper column names
+- Saves data to Excel files with proper French column names
 - Robust error handling and Chrome driver management
 
 ## Requirements
@@ -129,37 +129,27 @@ To scrape different competitions, modify the URL parameters:
 
 ## Output
 
-The script creates a CSV file named `ffvb_results.csv` with the following columns:
+The script creates Excel files (`.xlsx`) with the following columns:
 
 | Column | Description |
 |--------|-------------|
-| Rank | Team ranking position |
-| Team | Team name |
-| Points | Total points |
-| Games_Played | Number of games played |
-| Wins | Number of wins |
-| Losses | Number of losses |
-| Forfeits | Number of forfeits |
-| Wins_3-0 | Wins with 3-0 score |
-| Wins_3-1 | Wins with 3-1 score |
-| Wins_3-2 | Wins with 3-2 score |
-| Losses_2-3 | Losses with 2-3 score |
-| Losses_1-3 | Losses with 1-3 score |
-| Losses_0-3 | Losses with 0-3 score |
-| Sets_For | Total sets won |
-| Sets_Against | Total sets lost |
-| Sets_Ratio | Sets won/lost ratio |
-| Points_For | Total points scored |
-| Points_Against | Total points conceded |
-| Points_Ratio | Points scored/conceded ratio |
+| Class. | Team ranking position (1, 2, 3, etc.) |
+| Equipe | Team name |
+| Pts. | Total points earned |
+| Jou. | Number of games played (Joués) |
+| Gagn. | Number of games won (Gagnés) |
+| Perd. | Number of games lost (Perdus) |
+| Pourcentage | Win percentage in French format (e.g., "100 %", "50 %", "0 %") |
 
 ## Example Output
 
 ```
-Rank,Team,Points,Games_Played,Wins,Losses,Forfeits,Wins_3-0,Wins_3-1,Wins_3-2,Losses_2-3,Losses_1-3,Losses_0-3,Sets_For,Sets_Against,Sets_Ratio,Points_For,Points_Against,Points_Ratio
-1.0,IBOS VOLLEY 1,6,2,2,,,2,,,,,,6,,MAX,152,113,1.345
-2.0,GRENADE VOLLEY BALL 1,6,2,2,,,1,1,,,,,6,1,6.000,167,130,1.285
-3.0,TOULOUSE ATHLETIC CLUB 1,5,2,2,,,1,,1,,,,6,2,3.000,192,174,1.103
+Class.,Equipe,Pts.,Jou.,Gagn.,Perd.,Pourcentage
+1,IBOS VOLLEY 1,6,2,2,0,100 %
+2,GRENADE VOLLEY BALL 1,6,2,2,0,100 %
+3,TOULOUSE ATHLETIC CLUB 1,5,2,2,0,100 %
+4,ENT. PUYGOUZON/CASTELNAU LEVIS 2,3,2,1,1,50 %
+5,A.S. DE L'UNION VOLLEY-BALL 2,3,2,1,1,50 %
 ```
 
 ## Troubleshooting
@@ -189,9 +179,11 @@ The scraper:
 
 ## Files
 
-- `volley_scraper_final.py` - Main scraper script with improved structure
-- `scrapper.py` - Original working version
-- `ffvb_results.csv` - Output CSV file (generated after running)
+- `volley_scraper_final.py` - Main scraper script with multi-team support
+- `teams.csv` - Configuration file for team names and URLs
+- `requirements.txt` - Python dependencies
+- `verify_setup.py` - Setup verification script
+- `*.xlsx` - Generated Excel files (one per team/scraping session)
 
 ## License
 
